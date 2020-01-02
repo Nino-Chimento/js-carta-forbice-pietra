@@ -71,11 +71,13 @@ h2 {
 .decisione-player img {
   width: 30%;
   padding: 8%;
+  border-radius: 100%;
   cursor: pointer;
   position: relative;
 }
 .decisione-cpu img {
   width: 30%;
   padding: 8%;
+  border-radius: 100%;
   position: relative;
 }
