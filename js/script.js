@@ -12,7 +12,7 @@ var rigioca = document.getElementById('gioca')
 // setto la funzione rigioca
 rigioca.addEventListener("click",
 function() {
-
+  rigioca.classList.add("hidden");
   forbice.classList.remove("hidden","animation");
   pietra.classList.remove("hidden","animation");
   carta.classList.remove("hidden","animation")
@@ -89,6 +89,44 @@ function() {
     cartaCpu.classList.add("hidden");
     var risultato = "vittoria Pc";
     scoreCpu ++;
+    document.getElementById('risultato').innerHTML= risultato;
+    document.getElementById('score-player').innerHTML = scorePlayer;
+  }
+  setTimeout(function(){rigioca.classList.remove("hidden"); }, 6000);
+}
+)
+// opzione sasso
+pietra.addEventListener("click",
+function() {
+  var sceltaPc =  Math.floor(Math.random() * 3 + 1);
+  console.log(sceltaPc);
+  forbice.classList.add("hidden");
+  pietra.classList.add("animation");
+  carta.classList.add("hidden")
+  if (sceltaPc == 1) {
+    pietraCpu.classList.add("hidden");
+    forbiceCpu.classList.add("hidden");
+    cartaCpu.classList.add("animation-pc");
+    var risultato = "Vittoria Pc";
+    scoreCpu ++;
+    document.getElementById('risultato').innerHTML= risultato;
+    document.getElementById('score-player').innerHTML = scorePlayer;
+
+  }
+  else if (sceltaPc == 2) {
+    pietraCpu.classList.add("hidden");
+    forbiceCpu.classList.add("animation-pc");
+    cartaCpu.classList.add("hidden");
+    var risultato = "Vittoria Player";
+    scorePlayer ++;
+    document.getElementById('risultato').innerHTML= risultato;
+    document.getElementById('score-cpu').innerHTML = scoreCpu;
+  }
+  else {
+    pietraCpu.classList.add("animation-pc");
+    forbiceCpu.classList.add("hidden");
+    cartaCpu.classList.add("hidden");
+    var risultato = "Pareggio";
     document.getElementById('risultato').innerHTML= risultato;
     document.getElementById('score-player').innerHTML = scorePlayer;
   }
