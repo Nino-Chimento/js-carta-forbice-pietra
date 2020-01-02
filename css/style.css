@@ -9,6 +9,19 @@ body {
 .hidden {
   display: none;
 }
+.animation-pc {
+animation-name: movie-pc;
+animation-duration: 5s;
+}
+@keyframes movie-pc {
+  0% {
+
+  }
+  50%{
+    top:40%;
+    transform: scale(1.5);
+  }
+}
 .animation {
   animation-name: movie;
   animation-duration: 5s;
@@ -39,8 +52,12 @@ body {
   }
 
 }
+
 #gioca {
   cursor:pointer;
+}
+h1 {
+  text-align: center;
 }
 h2 {
   display: block;
